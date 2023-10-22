@@ -9,20 +9,30 @@ class RPS(Enum):
     SCISSORS = 3
 
 
-playerchoice = input("Enter...\n1 for Rock\n2 for Paper\n3 for Scissor:\n")
-player = int(playerchoice)
+play_again = True
 
-machinechoice = random.choice("123")
-computer = int(machinechoice)
+while play_again:
+    playerchoice = input(
+        "\nEnter...\n1 for Rock\n2 for Paper\n3 for Scissor:\n")
+    player = int(playerchoice)
 
-if player < 1 or player > 3:
-    sys.exit("You must enter 1 or 2 or 3")
-print("\nYou chose: " + str(RPS(player)).replace("RPS.", ""))
-print("Computer chose: " + str(RPS(computer)).replace("RPS.", ""))
-if (player == 1 and computer == 3) | (player == 2 and computer == 1) | (player == 3 and computer == 2):
+    machinechoice = random.choice("123")
+    computer = int(machinechoice)
 
-    print("🎉🎉🎉 You win! 🎉🎉🎉")
-elif player == computer:
-    print("😲 Tie Game!")
-else:
-    print("🐍 Python wins!")
+    if player < 1 or player > 3:
+        sys.exit("You must enter 1 or 2 or 3")
+    print("\nYou chose: " + str(RPS(player)).replace("RPS.", ""))
+    print("Computer chose: " + str(RPS(computer)).replace("RPS.", ""))
+    if (player == 1 and computer == 3) | (player == 2 and computer == 1) | (player == 3 and computer == 2):
+
+        print("🎉🎉🎉 You win! 🎉🎉🎉\n")
+    elif player == computer:
+        print("😲😲😲😲😲 Tie Game!😲😲😲😲😲\n")
+    else:
+        print("🎉🎉🎉  🐍 Python wins! 🎉🎉🎉\n")
+    play_again = input("Play again?: Y for yes | N for no: ")
+    if play_again == "y" or play_again == "Y":
+        continue
+    else:
+        break
+print("Bye Bye!")
