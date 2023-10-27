@@ -35,4 +35,4 @@ while play_again:
         continue
     else:
         break
-print("Bye Bye!")
+sys.exit("Bye Bye!")
