@@ -9,9 +9,8 @@ class RPS(Enum):
     SCISSORS = 3
 
 
-play_again = True
+def rps():
 
-while play_again:
     playerchoice = input(
         "\nEnter...\n1 for Rock\n2 for Paper\n3 for Scissor:\n")
     player = int(playerchoice)
@@ -31,8 +30,8 @@ while play_again:
     else:
         print("🎉🎉🎉  🐍 Python wins! 🎉🎉🎉\n")
     play_again = input("Play again?: Y for yes | N for no: ")
-    if play_again == "y" or play_again == "Y":
-        continue
-    else:
-        break
-sys.exit("Bye Bye!")
+    if play_again.lower() == "y":
+        rps()
+    sys.exit("Bye Bye!")
+
+rps()
