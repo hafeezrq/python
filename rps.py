@@ -9,6 +9,9 @@ class RPS(Enum):
     SCISSORS = 3
 
 
+game_count = 0
+
+
 def rps():
 
     playerchoice = input(
@@ -22,16 +25,28 @@ def rps():
         sys.exit("You must enter 1 or 2 or 3")
     print("\nYou chose: " + str(RPS(player)).replace("RPS.", ""))
     print("Computer chose: " + str(RPS(computer)).replace("RPS.", ""))
-    if (player == 1 and computer == 3) | (player == 2 and computer == 1) | (player == 3 and computer == 2):
 
-        print("🎉🎉🎉 You win! 🎉🎉🎉\n")
-    elif player == computer:
-        print("😲😲😲😲😲 Tie Game!😲😲😲😲😲\n")
-    else:
-        print("🎉🎉🎉  🐍 Python wins! 🎉🎉🎉\n")
+    # Use nested function
+    def decide_winner(player, computer):
+        if (player == 1 and computer == 3) | (player == 2 and computer == 1) | (player == 3 and computer == 2):
+            return "🎉🎉🎉 You win! 🎉🎉🎉\n"
+        elif player == computer:
+            return "😲😲😲😲😲 Tie Game!😲😲😲😲😲\n"
+        else:
+            return "🎉🎉🎉  🐍 Python wins! 🎉🎉🎉\n"
+
+    game_result = decide_winner(player, computer)
+    print(game_result)
+
+    # This is how you modify the global variable in python
+    global game_count
+    game_count += 1
+    # global variable modified above!
+    print("Game Count: " + str(game_count))
     play_again = input("Play again?: Y for yes | N for no: ")
     if play_again.lower() == "y":
         rps()
     sys.exit("Bye Bye!")
+
 
 rps()
