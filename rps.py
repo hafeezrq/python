@@ -27,8 +27,10 @@ def rps():
 
         if player < 1 or player > 3:
             sys.exit("You must enter 1 or 2 or 3")
-        print("\nYou chose: " + str(RPS(player)).replace("RPS.", ""))
-        print("Computer chose: " + str(RPS(computer)).replace("RPS.", ""))
+        print(
+            f"\nYou chose:  {(str(RPS(player))).replace('RPS.', '').title()}")
+        print(
+            f"Computer chose: {(str(RPS(computer))).replace('RPS.', '').title()}")
 
         # Use nested within nested function
         def decide_winner(player, computer):
@@ -41,7 +43,7 @@ def rps():
                 return "\n😲😲😲😲😲 Tie Game!😲😲😲😲😲\n"
             else:
                 python_wins += 1
-                return "\n🎉🎉🎉  🐍 Python wins! 🎉🎉🎉\n"
+                return "\n🎉🎉🎉  🐍 Computer wins! 🎉🎉🎉\n"
 
         game_result = decide_winner(player, computer)
         print(game_result)
@@ -49,9 +51,9 @@ def rps():
         nonlocal game_count
         game_count += 1
 
-        print("Game Count: " + str(game_count))
-        print("Player wins: " + str(player_wins))
-        print("Computer wins: " + str(python_wins))
+        print(f"Game Count: {(str(game_count))}")
+        print(f"Player wins: {(str(player_wins))}")
+        print(f"Computer wins: {(str(python_wins))}")
         play_again = input("\nPlay again?: Y for yes | N for no: ")
         if play_again.lower() == "y":
             play_rps()
