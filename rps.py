@@ -62,5 +62,8 @@ def rps():
     return play_rps
 
 
-play = rps()
-play()
+rock_paper_scissors = rps()
+
+# Just to prevent it from execution at the import time
+if __name__ == "__main__":
+    rock_paper_scissors()
