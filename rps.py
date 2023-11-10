@@ -26,7 +26,8 @@ def rps(player_name="Player01"):
         machine_choice = int(random.choice("123"))
 
         if player_choice < 1 or player_choice > 3:
-            sys.exit(f"{player_name}, please enter 1 or 2 or 3")
+            print(f"{player_name}, please enter 1 or 2 or 3")
+            play_rps()
         print(
             f"\n{player_name}, you chose:  {(str(RPS(player_choice))).replace('RPS.', '').title()}")
         print(
@@ -44,7 +45,7 @@ def rps(player_name="Player01"):
                 return "\n😲😲😲😲😲 Tie Game!😲😲😲😲😲\n"
             else:
                 python_wins += 1
-                return "\n🎉🎉🎉  🐍 Computer wins! 🎉🎉🎉\n"
+                return f"\n🎉🎉🎉  🐍 Computer wins! 🎉🎉🎉 Sorry {player_name}! \N{DISAPPOINTED BUT RELIEVED FACE}\n"
 
         game_result = decide_winner(player_choice, machine_choice)
         print(game_result)
@@ -69,7 +70,7 @@ def rps(player_name="Player01"):
         else:
             print("\n🎉🎉🎉🎉🎉🎉🎉🎉🎉")  
             print(f"\n{player_name}, Thanks for playing!")   
-            sys.exit(f"\n{player_name} Bye Bye!")
+            sys.exit(f"\n{player_name}, Bye Bye!")
 
     return play_rps
 
