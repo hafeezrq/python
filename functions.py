@@ -20,9 +20,7 @@ sum(3, 5)
 sum(100, 498)
 
 # function wiht default value(s)
-# Not: a non-default can't follow a parameter with default
-
-
+# Note: a non-default can't follow a parameter with default
 def afunc(num1=5, num2=3):
     print(num1 + num2)
 
@@ -30,8 +28,6 @@ def afunc(num1=5, num2=3):
 afunc()
 
 # Function with return statement
-
-
 def return_func(x, y):
     return x + y
 
@@ -41,8 +37,6 @@ print(total)
 
 # Function with variable number of arguments
 # This * will make arguments into tuple.
-
-
 def multi_args_func(*args):
     print(args)
     print(type(args))
@@ -52,8 +46,6 @@ multi_args_func("Dave", "John", "Sarah")
 
 # Function with named/keywords arguments
 # ** will make arguments/data into a dictinary
-
-
 def multi_named_args_func(**kwargs):
     print(kwargs)
     print(type(kwargs))
