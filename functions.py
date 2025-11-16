@@ -40,6 +40,7 @@ print(total)
 def multi_args_func(*args):
     print(args)
     print(type(args))
+    print("===============")
 
 
 multi_args_func("Dave", "John", "Sarah")
